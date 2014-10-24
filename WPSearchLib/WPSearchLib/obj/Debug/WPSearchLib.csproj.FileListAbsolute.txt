@@ -8,3 +8,5 @@ C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\HtmlAgilityPack.pdb
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\HtmlAgilityPack.xml
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\obj\Debug\WPSearchLib.dll
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\obj\Debug\WPSearchLib.pdb
+C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WebDriver.dll
+C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WebDriver.xml

@@ -35,13 +35,19 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.2.44.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Browsers\BaseBrowser.cs" />
+    <Compile Include="Entities\Browsers\PhantomJS\PhantomBrowser.cs" />
     <Compile Include="Entities\HtmlSearchResult.cs" />
     <Compile Include="Entities\Providers\BaseProvider.cs" />
     <Compile Include="Entities\SearchResult.cs" />
