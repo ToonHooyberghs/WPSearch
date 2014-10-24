@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,24 +8,34 @@ using OpenQA.Selenium.PhantomJS;
 
 namespace WPSearchLib.Entities.Browsers.PhantomJS
 {
-    public class PhantomBrowser : BaseBrowser
+    public class PhantomBrowser : BaseBrowser , IDisposable
     {
-        public override string Search(string url)
+        private PhantomJSDriver phantomJsDriver;
+
+        public PhantomBrowser()
         {
-            const string PhantomDirectory = @"..\PhantomJS";
-            var driverService = PhantomJSDriverService.CreateDefaultService(PhantomDirectory);
-            driverService.HideCommandPromptWindow = false;
+            const string phantomDirectory = @"C:\GitHub\WPSearch\WPSearchLib\packages\PhantomJS.1.9.7\tools\phantomjs\";
+            var driverService = PhantomJSDriverService.CreateDefaultService(phantomDirectory);
+            driverService.HideCommandPromptWindow = true;
             driverService.LoadImages = false;
-            string pageSource = null;
-
-            using (var phantomDriver = new PhantomJSDriver(driverService))
-            {
-                phantomDriver.Url = url;
-                pageSource = phantomDriver.PageSource;
-            }
-
-            return pageSource;
+            phantomJsDriver = new PhantomJSDriver(driverService);
 
         }
+
+        protected override string Search(string url)
+        {
+            phantomJsDriver.Url = url;
+            var pageSource = phantomJsDriver.PageSource;
+            return pageSource;
+        }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+           phantomJsDriver.Dispose();
+        }
+
+        #endregion
     }
 }

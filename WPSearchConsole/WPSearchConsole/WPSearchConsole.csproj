@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFB05C48-0402-4187-840D-3688FB4DB082}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{83DA996A-1D00-45F2-9FEE-61D7A17ED328}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WPSearchLib</RootNamespace>
-    <AssemblyName>WPSearchLib</AssemblyName>
+    <RootNamespace>WPSearchConsole</RootNamespace>
+    <AssemblyName>WPSearchConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,40 +37,25 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebDriver">
-      <HintPath>..\packages\Selenium.WebDriver.2.44.0\lib\net40\WebDriver.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Browsers\BaseBrowser.cs" />
-    <Compile Include="Entities\Browsers\PhantomJS\PhantomBrowser.cs" />
-    <Compile Include="Entities\HtmlSearchResult.cs" />
-    <Compile Include="Entities\Providers\AmazonProvider.cs" />
-    <Compile Include="Entities\Providers\BaseProvider.cs" />
-    <Compile Include="Entities\SearchResult.cs" />
-    <Compile Include="Interfaces\IProvider.cs" />
-    <Compile Include="Interfaces\ISearchResult.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="..\packages\PhantomJS.1.9.7\tools\phantomjs\phantomjs.exe">
-      <Link>Browsers\Browsers\PhantomJS\phantomjs.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Entities\Browsers\PhantomJS\phantomjs-license.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Entities\Browsers\PhantomJS\packages.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\WPSearchLib\WPSearchLib\WPSearchLib.csproj">
+      <Project>{efb05c48-0402-4187-840d-3688fb4db082}</Project>
+      <Name>WPSearchLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

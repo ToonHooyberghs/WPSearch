@@ -1,12 +1,11 @@
-C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\obj\Debug\WPSearchLib.csprojResolveAssemblyReference.cache
-C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Browsers\PhantomJS\phantomjs.exe
+C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Browsers\Browsers\PhantomJS\phantomjs.exe
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Entities\Browsers\PhantomJS\phantomjs-license.txt
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WPSearchLib.dll
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WPSearchLib.pdb
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\HtmlAgilityPack.dll
+C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WebDriver.dll
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\HtmlAgilityPack.pdb
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\HtmlAgilityPack.xml
+C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WebDriver.xml
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\obj\Debug\WPSearchLib.dll
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\obj\Debug\WPSearchLib.pdb
-C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WebDriver.dll
-C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\WebDriver.xml
