@@ -28,6 +28,13 @@ namespace WPSearchLib.Entities.Browsers.PhantomJS
             return pageSource;
         }
 
+        protected async override Task<string> SearchAsync(string url)
+        {
+            var task = Task.Run(() => Search(url));
+            return await task; 
+        }
+
+
         #region IDisposable Members
 
         public void Dispose()

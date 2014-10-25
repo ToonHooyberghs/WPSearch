@@ -12,6 +12,8 @@ namespace WPSearchLib.Entities.Browsers
     {
         protected abstract string Search(string url);
 
+        protected abstract Task<string> SearchAsync(string url);
+
         public virtual HtmlDocument SearchItem(string url)
         {
             Stopwatch stopWatch = new Stopwatch();
@@ -25,6 +27,22 @@ namespace WPSearchLib.Entities.Browsers
             Console.WriteLine("{0} Sec -> Opening Page",Round(elapsedSearchingTime));
             Console.WriteLine("{0} Sec -> Dom Processing", Round(ts.TotalSeconds - elapsedSearchingTime));
             Console.WriteLine("{0} Sec -> Searching : '{1}'", Round(ts.TotalSeconds), url); 
+            return doc;
+        }
+
+        public async virtual Task<HtmlDocument> SearchItemAsync(string url)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            var result = await SearchAsync(url);
+            var elapsedSearchingTime = stopWatch.Elapsed.TotalSeconds;
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(result);
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+            Console.WriteLine("{0} Sec -> Opening Page", Round(elapsedSearchingTime));
+            Console.WriteLine("{0} Sec -> Dom Processing", Round(ts.TotalSeconds - elapsedSearchingTime));
+            Console.WriteLine("{0} Sec -> Searching : '{1}'", Round(ts.TotalSeconds), url);
             return doc;
         }
 
