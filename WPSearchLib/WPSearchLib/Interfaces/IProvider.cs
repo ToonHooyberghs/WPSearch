@@ -13,6 +13,9 @@ namespace WPSearchLib.Interfaces
 
         string GetUrl();
 
+        Task<IEnumerable<ISearchResult>> LaunchSearch(string url, decimal minRange = Decimal.MinValue,
+                                                      decimal maxRange = Decimal.MaxValue);
+
         ISearchResult CreateEmptySearchResult();
 
         IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot);

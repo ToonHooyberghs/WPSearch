@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using WPSearchLib.Entities.Browsers;
 using WPSearchLib.Interfaces;
 
 namespace WPSearchLib.Entities.Providers
 {
     public class AmazonProvider : BaseProvider
     {
-        public AmazonProvider(string name): base(name)
+        public AmazonProvider(string name , BaseBrowser baseBrowser): base(name ,baseBrowser)
         {
         }
 

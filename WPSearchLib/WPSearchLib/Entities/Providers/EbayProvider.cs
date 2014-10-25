@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPSearchLib.Entities.Browsers;
 using WPSearchLib.Interfaces;
 
 namespace WPSearchLib.Entities.Providers
 {
     public class EbayProvider : BaseProvider
     {
-        public EbayProvider(string name)
-            : base(name)
+        public EbayProvider(string name, BaseBrowser baseBrowser): base(name, baseBrowser)
         {
         }
 

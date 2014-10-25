@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using WPSearchLib.Entities.Browsers;
 using WPSearchLib.Interfaces;
 
 namespace WPSearchLib.Entities.Providers
@@ -14,9 +15,12 @@ namespace WPSearchLib.Entities.Providers
     {
         public Collection<ISearchResult> SearchResults { get; private set; }
 
-        public BaseProvider(string name)
+        public BaseBrowser Browser { get; private set; }
+
+        public BaseProvider(string name , BaseBrowser browser)
         {
             Name = name;
+            Browser = browser;
             SearchResults = new Collection<ISearchResult>();
         }
 
@@ -24,6 +28,13 @@ namespace WPSearchLib.Entities.Providers
 
 
         public string Name { get; set; }
+
+        public async virtual Task<IEnumerable<ISearchResult>> LaunchSearch(string searchArg ,decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue)
+        {
+            string url = string.Format(GetUrl(), searchArg);
+            var doc = await Browser.SearchItemAsync(url);
+            return GetSearchResults(doc, minRange, maxRange);
+        }
 
         public abstract string GetUrl();
 
