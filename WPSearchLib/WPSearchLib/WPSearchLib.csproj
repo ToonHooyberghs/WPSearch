@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fizzler">
+      <HintPath>..\..\WPSearchConsole\packages\Fizzler.1.0.0\lib\net35\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="Fizzler.Systems.HtmlAgilityPack">
+      <HintPath>..\..\WPSearchConsole\packages\Fizzler.Systems.HtmlAgilityPack.1.0.0\lib\net35\Fizzler.Systems.HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -48,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Entities\Browsers\BaseBrowser.cs" />
     <Compile Include="Entities\Browsers\PhantomJS\PhantomBrowser.cs" />
+    <Compile Include="Entities\Browsers\SimpleHtmlBrowser.cs" />
     <Compile Include="Entities\HtmlSearchResult.cs" />
     <Compile Include="Entities\Providers\AmazonProvider.cs" />
     <Compile Include="Entities\Providers\BaseProvider.cs" />
@@ -69,6 +76,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Entities\Browsers\PhantomJS\packages.config" />
     <None Include="packages.config" />
   </ItemGroup>
