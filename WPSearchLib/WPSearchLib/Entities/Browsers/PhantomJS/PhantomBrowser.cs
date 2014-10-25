@@ -19,7 +19,6 @@ namespace WPSearchLib.Entities.Browsers.PhantomJS
             driverService.HideCommandPromptWindow = true;
             driverService.LoadImages = false;
             phantomJsDriver = new PhantomJSDriver(driverService);
-
         }
 
         protected override string Search(string url)

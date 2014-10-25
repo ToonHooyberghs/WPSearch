@@ -1,4 +1,3 @@
-C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\Browsers\Browsers\PhantomJS\phantomjs.exe
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\Entities\Browsers\PhantomJS\phantomjs-license.txt
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\WPSearchConsole.exe.config
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\WPSearchConsole.exe
@@ -13,3 +12,4 @@ C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\WebDriver.xml
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\obj\Debug\WPSearchConsole.csprojResolveAssemblyReference.cache
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\obj\Debug\WPSearchConsole.exe
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\obj\Debug\WPSearchConsole.pdb
+C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\Entities\Browsers\PhantomJS\phantomjs.exe

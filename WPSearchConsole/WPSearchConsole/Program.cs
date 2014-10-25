@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,15 @@ namespace WPSearchConsole
         public static Collection<WPSearchLib.Interfaces.IProvider> Providers = new Collection<IProvider>()
             {
                 new AmazonProvider("AMAZON"),
-                new AmazonProvider("AMAZON"),
+                new EbayProvider("EBAY"),
                 new AmazonProvider("AMAZON")
             };
 
         static void Main(string[] args)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             BaseBrowser browser = new PhantomBrowser();
 
             string searchArg = "KGS216M";
@@ -40,6 +44,9 @@ namespace WPSearchConsole
                     Console.WriteLine(new string('_', 50));
                 }
             }
+
+            stopwatch.Stop();
+            Console.WriteLine("Total searching time : " + Math.Round(stopwatch.Elapsed.TotalSeconds,2));
 
             Console.ReadKey();
 

@@ -17,12 +17,20 @@ namespace WPSearchLib.Entities.Browsers
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             var result = Search(url);
+            var elapsedSearchingTime = stopWatch.Elapsed.TotalSeconds;
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(result);
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
-            Console.WriteLine("{0} Sec -> Searching : '{1}'",ts.TotalSeconds,url); 
+            Console.WriteLine("{0} Sec -> Opening Page",Round(elapsedSearchingTime));
+            Console.WriteLine("{0} Sec -> Dom Processing", Round(ts.TotalSeconds - elapsedSearchingTime));
+            Console.WriteLine("{0} Sec -> Searching : '{1}'", Round(ts.TotalSeconds), url); 
             return doc;
+        }
+
+        private double Round(double number)
+        {
+            return Math.Round(number, 2);
         }
     }
 }
