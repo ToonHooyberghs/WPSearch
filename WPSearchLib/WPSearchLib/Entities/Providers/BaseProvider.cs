@@ -31,7 +31,7 @@ namespace WPSearchLib.Entities.Providers
 
         public async virtual Task<IEnumerable<ISearchResult>> LaunchSearch(string searchArg ,decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue)
         {
-            string url = string.Format(GetUrl(), searchArg);
+            string url = string.Format(GetUrl(), searchArg.Replace(' ','+'));
             var doc = await Browser.SearchItemAsync(url);
             return GetSearchResults(doc, minRange, maxRange);
         }

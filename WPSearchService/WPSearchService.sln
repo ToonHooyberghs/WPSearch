@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPSearchService", "WPSearchService\WPSearchService.csproj", "{4796417D-3585-4F20-8D1C-F7F40A203BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPSearchLib", "..\WPSearchLib\WPSearchLib\WPSearchLib.csproj", "{EFB05C48-0402-4187-840D-3688FB4DB082}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4796417D-3585-4F20-8D1C-F7F40A203BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4796417D-3585-4F20-8D1C-F7F40A203BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4796417D-3585-4F20-8D1C-F7F40A203BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4796417D-3585-4F20-8D1C-F7F40A203BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB05C48-0402-4187-840D-3688FB4DB082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB05C48-0402-4187-840D-3688FB4DB082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB05C48-0402-4187-840D-3688FB4DB082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB05C48-0402-4187-840D-3688FB4DB082}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
