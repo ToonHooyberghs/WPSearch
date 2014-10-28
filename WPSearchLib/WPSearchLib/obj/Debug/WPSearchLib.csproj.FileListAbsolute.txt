@@ -15,3 +15,4 @@ C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Fizzler.dll
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Fizzler.Systems.HtmlAgilityPack.dll
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Fizzler.xml
 C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Fizzler.Systems.HtmlAgilityPack.xml
+C:\GitHub\WPSearch\WPSearchLib\WPSearchLib\bin\Debug\Entities\Browsers\Mock\KGS216M.html
