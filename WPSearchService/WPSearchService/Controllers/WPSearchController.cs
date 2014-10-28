@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using WPSearchLib.Entities.Browsers;
 using WPSearchLib.Entities.Browsers.PhantomJS;
 using WPSearchLib.Entities.Providers;
 using WPSearchLib.Interfaces;
@@ -17,23 +18,24 @@ namespace WPSearchService.Controllers
 
         public static Collection<WPSearchLib.Interfaces.IProvider> Providers = new Collection<IProvider>()
             {
-                //new AmazonProvider("AMAZON",new PhantomBrowser()),
-                new EbayProvider("EBAY",new PhantomBrowser()),
-                //new AmazonProvider("AMAZON",new PhantomBrowser())
+                new EbayProvider("Ebay",new PhantomBrowser()),
+                new AmazonProvider("Amazon",new PhantomBrowser())
             };
 
         // GET api/wpsearch/5
-        [HttpGet]
+        [HttpPost]
         public async Task<IEnumerable<ISearchResult>> Get(string searchWp)
         {
             ICollection<ISearchResult> searchresults = new Collection<ISearchResult>();
 
-            decimal minValue = 0;
+            decimal minValue = 200;
             decimal maxValue = 350;
 
             await Task.WhenAll(Providers.Select(provider =>  AskProvider( searchresults, provider, searchWp, minValue, maxValue)));
-            
-            return searchresults;
+
+            var limitedResults = searchresults.Where(x => x.Price != null && (x.Price >= minValue && x.Price <= maxValue)).OrderBy(x => x.Price).ToList();
+
+            return limitedResults;
         }
 
 

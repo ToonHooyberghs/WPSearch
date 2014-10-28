@@ -25,7 +25,7 @@
     <h3>Output of action done through WEB API:</h3>
     <ol class="round">
         <li>
-            <div id="divResult"></div>
+            <span id="divResult" style="display: inline"></span>
 
         </li>
     </ol>
@@ -35,12 +35,35 @@
 
 <script >
 
-    $("#searchButton").click(function () {
+    $("#searchButton").click(function() {
 
-        $.post("/api/WPSearch/Inkt", function(data) {
-            console.log("Data: " + data);
+
+        var searchArg = $("#txtSearchValue").val();
+
+        $.post("/api/WPSearch/" + searchArg, function (data) {
+
+
+            $("#divResult").empty();
+
+            $.each(data, function(i, item) {
+
+                for (var propertyName in item) {
+                    // propertyName is what you want
+                    // you can get the value like this: myObject[propertyName]
+                    $("#divResult").append(propertyName + " : " + item[propertyName] + "<br/>");
+
+                }
+                ;
+
+
+                $("#divResult").append("---------------------------<br/>");
+            });
+
         });
 
     });
+
+           
+    
 
 </script>

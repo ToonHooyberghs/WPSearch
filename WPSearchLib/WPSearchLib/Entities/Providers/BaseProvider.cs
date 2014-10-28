@@ -33,19 +33,19 @@ namespace WPSearchLib.Entities.Providers
         {
             string url = string.Format(GetUrl(), searchArg.Replace(' ','+'));
             var doc = await Browser.SearchItemAsync(url);
-            return GetSearchResults(doc, minRange, maxRange);
+            return GetSearchResults(doc, searchArg, minRange, maxRange);
         }
 
         public abstract string GetUrl();
 
-        public abstract IEnumerable<ISearchResult> GetSearchResults(HtmlAgilityPack.HtmlDocument htmlRootdecimal);
+        public abstract IEnumerable<ISearchResult> GetSearchResults(HtmlAgilityPack.HtmlDocument htmlRootdecimal , string searchArg);
 
-        public virtual IEnumerable<ISearchResult> GetSearchResults(HtmlAgilityPack.HtmlDocument htmlRootdecimal, decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue)
+        public virtual IEnumerable<ISearchResult> GetSearchResults(HtmlAgilityPack.HtmlDocument htmlRootdecimal, string searchArg, decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue)
         {
-            return GetInternalSearchResults(htmlRootdecimal, minRange, maxRange);
+            return GetInternalSearchResults(htmlRootdecimal,searchArg , minRange, maxRange);
         }
 
-        public virtual IEnumerable<ISearchResult> GetInternalSearchResults(HtmlAgilityPack.HtmlDocument htmlRoot, decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue)
+        public virtual IEnumerable<ISearchResult> GetInternalSearchResults(HtmlAgilityPack.HtmlDocument htmlRoot, string searchArg, decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue)
         {
             ResetResultCollection();
 
@@ -56,6 +56,10 @@ namespace WPSearchLib.Entities.Providers
             string infoPath = GetInfoPath();
 
             var masterItems = SelectNodes(htmlRoot, itemPath);
+
+
+            if(masterItems == null)
+                return new Collection<ISearchResult>();
 
             for (int i = 0; i < masterItems.Count; i++)
             {
@@ -90,7 +94,9 @@ namespace WPSearchLib.Entities.Providers
 
             }
 
-            var limitedResults = SearchResults.Where(x => x.Price != null && (x.Price >= minRange && x.Price <= maxRange)).OrderBy(x => x.Price).ToList();
+
+            var nameContainsSearchArg = SearchResults.Where(x => x.Name.Replace(" ", "").ToLower().Contains(searchArg.Replace(" ", "").ToLower()));
+            var limitedResults = nameContainsSearchArg.Where(x => x.Price != null && (x.Price >= minRange && x.Price <= maxRange)).OrderBy(x => x.Price).ToList();
             return limitedResults.Count > 5 ? limitedResults.Take(5) : limitedResults;
 
         }

@@ -18,9 +18,9 @@ namespace WPSearchLib.Interfaces
 
         ISearchResult CreateEmptySearchResult();
 
-        IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot);
+        IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot , string searchArg);
 
-        IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot, decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue);
+        IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot, string searchArg, decimal minRange = Decimal.MinValue, decimal maxRange = Decimal.MaxValue);
 
     }
 }

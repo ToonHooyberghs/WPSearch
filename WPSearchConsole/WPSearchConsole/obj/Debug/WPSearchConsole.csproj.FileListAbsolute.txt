@@ -13,4 +13,4 @@ C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\obj\Debug\WPSearchConsole.csp
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\obj\Debug\WPSearchConsole.exe
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\obj\Debug\WPSearchConsole.pdb
 C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\Entities\Browsers\PhantomJS\phantomjs.exe
-C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\Entities\Browsers\Mock\KGS216M.html
+C:\GitHub\WPSearch\WPSearchConsole\WPSearchConsole\bin\Debug\Entities\Browsers\Mock\Amazon_KGS216M.html

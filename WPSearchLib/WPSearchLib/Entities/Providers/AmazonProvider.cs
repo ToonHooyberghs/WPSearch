@@ -19,16 +19,16 @@ namespace WPSearchLib.Entities.Providers
 
         public override string GetUrl()
         {
-            return "http://www.amazon.de/s/ref=nb_sb_noss?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&url=search-alias%3Daps&field-keywords={0}";
+            return "http://www.amazon.de/s/ref=nb_sb_noss?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&url=search-alias%3Daps&field-keywords={0}&rh=i%3Aaps%2Ck%3A{0}%2Cp_76%3A419123031";
         }
 
         #endregion
 
         #region IProvider Members
 
-        public override IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot)
+        public override IEnumerable<ISearchResult> GetSearchResults(HtmlDocument htmlRoot , string searchArg)
         {
-            return GetInternalSearchResults(htmlRoot);
+            return GetInternalSearchResults(htmlRoot,searchArg);
         }
 
         public override string GetItemPath()

@@ -71,9 +71,10 @@
       <Link>Entities\Browsers\PhantomJS\phantomjs.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Entities\Browsers\Mock\KGS216M.html">
+    <Content Include="Entities\Browsers\Mock\Amazon_KGS216M.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Entities\Browsers\Mock\Ebay_KGS216M.html" />
     <Content Include="Entities\Browsers\PhantomJS\BrowseURL.js" />
     <Content Include="Entities\Browsers\PhantomJS\phantomjs-license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

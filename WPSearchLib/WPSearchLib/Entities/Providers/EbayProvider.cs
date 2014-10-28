@@ -21,9 +21,9 @@ namespace WPSearchLib.Entities.Providers
             return "http://www.benl.ebay.be/sch/i.html?_from=R40&_sacat=0&_nkw={0}&_pppn=r1&scp=ce0&_rdc=1";
         }
 
-        public override IEnumerable<ISearchResult> GetSearchResults(HtmlAgilityPack.HtmlDocument htmlRoot)
+        public override IEnumerable<ISearchResult> GetSearchResults(HtmlAgilityPack.HtmlDocument htmlRoot , string searchArg)
         {
-            var searchResults = GetInternalSearchResults(htmlRoot).ToList();
+            var searchResults = GetInternalSearchResults(htmlRoot , searchArg).ToList();
 
             return searchResults.Count > 10 ? searchResults.Take(10) : searchResults;
         }

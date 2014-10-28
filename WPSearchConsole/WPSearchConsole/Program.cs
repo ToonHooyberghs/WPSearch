@@ -16,9 +16,8 @@ namespace WPSearchConsole
     {
         public static Collection<WPSearchLib.Interfaces.IProvider> Providers = new Collection<IProvider>()
             {
-                new AmazonProvider("AMAZON",new MockBrowser()),
-                //new EbayProvider("EBAY",new MockBrowser()),
-                //new AmazonProvider("AMAZON",new PhantomBrowser())
+                new AmazonProvider("Amazon",new MockBrowser("Amazon")),
+                new EbayProvider("Ebay",new MockBrowser("Ebay")),
             };
 
         static void Main(string[] args)

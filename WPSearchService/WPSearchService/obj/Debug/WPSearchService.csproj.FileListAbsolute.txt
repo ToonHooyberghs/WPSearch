@@ -39,3 +39,4 @@ C:\GitHub\WPSearch\WPSearchService\WPSearchService\bin\WPSearchLib.pdb
 C:\GitHub\WPSearch\WPSearchService\WPSearchService\bin\HtmlAgilityPack.pdb
 C:\GitHub\WPSearch\WPSearchService\WPSearchService\bin\HtmlAgilityPack.xml
 C:\GitHub\WPSearch\WPSearchService\WPSearchService\bin\WebDriver.xml
+C:\GitHub\WPSearch\WPSearchService\WPSearchService\bin\Entities\Browsers\Mock\Amazon_KGS216M.html
